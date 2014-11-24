@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  *
- * @author Steffen
+ * @author
  */
 public class Enemy extends GameEntities {
     

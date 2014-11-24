@@ -23,9 +23,8 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * @author Steffen
  */
 
-//STEFFEN DIN!!!!DSDSDSDSDSSDSDDS !DDSDKSDSKDKSDK VIKWE WR! LSDSLDLSDLSKGSDD/ DSDSDSDSDSD NEW UPDATE!!!!!
 
-sdf
+
 
 public class FrameGUI extends JFrame {
     

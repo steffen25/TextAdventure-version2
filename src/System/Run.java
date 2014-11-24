@@ -12,7 +12,7 @@ import GUI.FrameGUI;
  */
 /**
  *
- * @author Steffen
+ * @author
  */
 public class Run {
     

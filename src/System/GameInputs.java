@@ -7,7 +7,7 @@ package System;
  */
 /**
  *
- * @author Steffen
+ * @author
  */
 
 import java.awt.*;
@@ -39,7 +39,8 @@ public class GameInputs {
         textfield.setText(">");
         
         textfield.setPreferredSize( new Dimension( 770, 34 ) );
-                
+
+
         textfield.addKeyListener(new KeyAdapter()
         {
         public void keyPressed(KeyEvent e)
@@ -55,6 +56,7 @@ public class GameInputs {
 
 
         }
+
         
         }
     });
@@ -74,9 +76,9 @@ public class GameInputs {
      textarea.setLineWrap(true);
 
 
-     //textarea.setText("Test");
+     textarea.setText("Once upon a timere there lived a big asss girl named Cindarella!");
 
-     //textarea.setEditable(false);
+     textarea.setEditable(false);
 
      return textarea;
 

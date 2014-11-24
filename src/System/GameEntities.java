@@ -9,7 +9,7 @@ package System;
 
 /**
  *
- * @author Steffen
+ * @author
  */
 public class GameEntities {
     
