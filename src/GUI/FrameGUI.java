@@ -210,6 +210,7 @@ e.gridy = 2;       //third row
         JLabel inventory = new JLabel();
         inventory.setFont(new Font(Font.MONOSPACED, Font.BOLD, 30));
         inventory.setText("Inventory");
+        inventory.setHorizontalAlignment(SwingConstants.CENTER);
 
 
         panel.add(inventory,BorderLayout.NORTH); // Danni WU
