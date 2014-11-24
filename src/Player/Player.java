@@ -12,7 +12,7 @@ import java.util.Random;
  * @author Steffen
  */
 
-
+//test
 public class Player extends GameEntities {
     
     
