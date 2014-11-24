@@ -23,11 +23,14 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * @author Steffen
  */
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> FETCH_HEAD
 
 public class FrameGUI extends JFrame {
-    
+    //tet
     private GameInputs gameinputs = new GameInputs();
     //(String name, int HP, boolean isDead, int mindamage, int maxdamage)
     private final Player player1 = new Player("Hans",80,false,8,12);
@@ -212,6 +215,7 @@ e.gridy = 2;       //third row
         JLabel inventory = new JLabel();
         inventory.setFont(new Font(Font.MONOSPACED, Font.BOLD, 30));
         inventory.setText("Inventory");
+        inventory.setHorizontalAlignment(SwingConstants.CENTER);
 
 
         panel.add(inventory,BorderLayout.NORTH); // Danni WU
