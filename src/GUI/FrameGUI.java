@@ -23,7 +23,6 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * @author Steffen
  */
 
-
 public class FrameGUI extends JFrame {
     
     private GameInputs gameinputs = new GameInputs();
