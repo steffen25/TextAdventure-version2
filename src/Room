@@ -14,7 +14,7 @@ public class Room {
 	 * 
 	 * @param id
 	 * @param objects
-   * @param hasLight
+   	 * @param hasLight
 	 * @param isLocked
 	 * @param description
 	 */
