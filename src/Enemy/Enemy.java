@@ -18,10 +18,11 @@ public class Enemy extends GameEntities {
     private boolean isDead;
     
     
-    public Enemy(String name, String description, int mindamage, int maxdamage, boolean isDead)
+    public Enemy(String name, String description, int HP, int mindamage, int maxdamage, boolean isDead)
     {
         this.setName(name);
         this.description = description;
+        this.setHP(HP);
         this.setDamage(randDamage(mindamage,maxdamage));
         this.isDead = isDead;
     }

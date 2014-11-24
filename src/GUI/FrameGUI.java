@@ -28,7 +28,7 @@ public class FrameGUI extends JFrame {
     //(String name, int HP, boolean isDead, int mindamage, int maxdamage)
     private final Player player1 = new Player("Hans",80,false,8,12);
     //(String name, String description, int mindamage, int maxdamage, boolean isDead)
-    private final Enemy enemy1 = new Enemy("Hans","Sort monster",8,12,false);
+    private final Enemy enemy1 = new Enemy("Monster","Sort monster",90,8,12,false);
     
     private JScrollPane jp;
 
@@ -52,7 +52,7 @@ public class FrameGUI extends JFrame {
         setJMenuBar(mainMenu());
      
         System.out.println(player1.getName() + player1.getHP() + player1.getDamage() + player1.getisDead());
-        System.out.println(player1.getName() + player1.getHP() + player1.getDamage() + player1.getisDead());
+        System.out.println(enemy1.getName() + enemy1.getDescription() + enemy1.getHP() + enemy1.getDamage() + enemy1.getisDead());
         
         
     
