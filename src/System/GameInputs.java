@@ -66,6 +66,9 @@ public class GameInputs {
                 case Commands.WEST:
                 System.out.println(Commands.WEST.toString());
                 break;
+                case Commands.USE:
+                System.out.println(Commands.USE.toString());
+                break;
                 default:
                 System.out.println("Command doesnt exist.");
                 break;

@@ -20,6 +20,7 @@ public final class Commands {
     public static final String WEST = "west";
     public static final String USE = "use";
     public static final String PICKUP = "pickup";
+    public static final String ATTACK = "attack";
 
 
 
