@@ -191,7 +191,7 @@ public class FrameGUI extends JFrame {
         name.setText("Name");
         
         JLabel image = new JLabel();
-        image.setIcon(new ImageIcon("src/user.png"));
+        image.setIcon(new ImageIcon(getClass().getClassLoader().getResource("user.png")));
         
         
         GridBagConstraints c = new GridBagConstraints();
