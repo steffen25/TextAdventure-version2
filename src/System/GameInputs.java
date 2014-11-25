@@ -13,6 +13,9 @@ package System;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import javax.swing.*;
 import javax.swing.text.Element;
 
@@ -61,7 +64,12 @@ public class GameInputs {
         }
     });
         
-        
+              InputStream is = getClass().getResourceAsStream("content.txt");
+        try {
+            textarea.read(new InputStreamReader(is), null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         
         
         
