@@ -78,17 +78,27 @@ public class FrameGUI extends JFrame {
 
             @Override
             public void menuSelected(MenuEvent e) {
-            JOptionPane.showMessageDialog(null, "ss");           
+            JOptionPane.showMessageDialog(null, "COMMANDLIST (TYPE FOLLOWING):" 
+                    +"\nTo walk north = walk_north" 
+                    +"\nTo walk south = walk_south"
+                    + "\nTo walk west = walk_west"
+                    + "\nTo walk east = walk_east"
+                    + "\nTo Search a room = go_search"
+                    + "\nTo pick up aa item = go_pickup"
+                    + "\nTo use an item = whatever.."
+                    + "\n"
+                    + "\n"
+                    + "", "", JOptionPane.WARNING_MESSAGE);           
             }
 
             @Override
             public void menuDeselected(MenuEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                help.setSelected(false);
             }
 
             @Override
             public void menuCanceled(MenuEvent e) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                throw new UnsupportedOperationException("menuCanceled"); //To change body of generated methods, choose Tools | Templates.
             }
             
         });
