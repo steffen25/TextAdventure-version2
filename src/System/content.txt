@@ -1,1 +1,20 @@
 Welcome
+
+To start a new game press * File -> New Game * in the top left corner.
+
+You will have the opportunity to save your game en route and load your saved game whenever you want.
+If you quit your game without saving, your data will be lost.
+
+The help button can always be pressed, and will tell which commands you have.
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------- Good Game -------------------------------------------

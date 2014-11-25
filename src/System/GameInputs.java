@@ -18,6 +18,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import javax.swing.*;
 import javax.swing.text.Element;
+import System.Commands;
 
 public class GameInputs {
 
@@ -52,8 +53,33 @@ public class GameInputs {
         {
            final  String input = textfield.getText();
           
+            switch(input.toLowerCase()) {
+                case Commands.NORTH:
+                System.out.println(Commands.NORTH.toString());
+                break;
+                case Commands.SOUTH:
+                System.out.println(Commands.SOUTH.toString());
+                break;
+                case Commands.EAST:
+                System.out.println(Commands.EAST.toString());
+                break;
+                case Commands.WEST:
+                System.out.println(Commands.WEST.toString());
+                break;
+                case Commands.USE:
+                System.out.println(Commands.USE.toString());
+                break;
+                default:
+                System.out.println("Command doesnt exist.");
+                break;
+            }
           
           textarea.append(input + "\n");
+          
+            
+          
+          
+         
           
           textarea.setCaretPosition(textarea.getDocument().getLength());
 
@@ -70,6 +96,7 @@ public class GameInputs {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
         
         
         

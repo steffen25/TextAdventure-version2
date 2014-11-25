@@ -12,6 +12,8 @@ import javax.swing.*;
 
 import static java.awt.BorderLayout.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -71,6 +73,35 @@ public class FrameGUI extends JFrame {
         
         JMenu file = new JMenu("File");
         JMenu help = new JMenu("Help");
+        
+        help.addMenuListener(new MenuListener() {
+
+            @Override
+            public void menuSelected(MenuEvent e) {
+            JOptionPane.showMessageDialog(null, "COMMANDLIST (TYPE FOLLOWING):" 
+                    +"\nTo walk north = walk_north" 
+                    +"\nTo walk south = walk_south"
+                    + "\nTo walk west = walk_west"
+                    + "\nTo walk east = walk_east"
+                    + "\nTo Search a room = go_search"
+                    + "\nTo pick up aa item = go_pickup"
+                    + "\nTo use an item = whatever.."
+                    + "\n"
+                    + "\n"
+                    + "", "", JOptionPane.WARNING_MESSAGE);           
+            }
+
+            @Override
+            public void menuDeselected(MenuEvent e) {
+                help.setSelected(false);
+            }
+
+            @Override
+            public void menuCanceled(MenuEvent e) {
+                throw new UnsupportedOperationException("menuCanceled"); //To change body of generated methods, choose Tools | Templates.
+            }
+            
+        });
         
         
         
@@ -160,7 +191,7 @@ public class FrameGUI extends JFrame {
         name.setText("Name");
         
         JLabel image = new JLabel();
-        image.setIcon(new ImageIcon("src/user.png"));
+        image.setIcon(new ImageIcon(getClass().getClassLoader().getResource("user.png")));
         
         
         GridBagConstraints c = new GridBagConstraints();
