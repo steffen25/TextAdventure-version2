@@ -23,11 +23,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * @author Steffen
  */
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> FETCH_HEAD
 
 public class FrameGUI extends JFrame {
     //tet
@@ -74,14 +70,22 @@ public class FrameGUI extends JFrame {
         JMenuBar menubar = new JMenuBar();
         
         JMenu file = new JMenu("File");
+        JMenu help = new JMenu("Help");
+        
+        
         
         file.setMnemonic(KeyEvent.VK_A);
         file.getAccessibleContext().setAccessibleDescription(
         "The only menu in this program that has menu items");
         
+        help.setMnemonic(KeyEvent.VK_B);
+        help.getAccessibleContext().setAccessibleDescription(
+        "The only menu in this program that has menu items");
+        
         
         
         menubar.add(file);
+        menubar.add(help);
         
         
         //save
