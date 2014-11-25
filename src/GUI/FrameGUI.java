@@ -79,13 +79,13 @@ public class FrameGUI extends JFrame {
             @Override
             public void menuSelected(MenuEvent e) {
             JOptionPane.showMessageDialog(null, "COMMANDLIST (TYPE FOLLOWING):" 
-                    +"\nTo walk north = walk_north" 
-                    +"\nTo walk south = walk_south"
-                    + "\nTo walk west = walk_west"
-                    + "\nTo walk east = walk_east"
-                    + "\nTo Search a room = go_search"
-                    + "\nTo pick up aa item = go_pickup"
-                    + "\nTo use an item = whatever.."
+                    +"\nTo walk north = n" 
+                    +"\nTo walk south = s"
+                    + "\nTo walk west = w"
+                    + "\nTo walk east = e"
+                    + "\nTo Search a room = se"
+                    + "\nTo pick up aa item = p"
+                    + "\nTo use an item = u"
                     + "\n"
                     + "\n"
                     + "", "", JOptionPane.WARNING_MESSAGE);           
