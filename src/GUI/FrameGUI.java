@@ -12,6 +12,8 @@ import javax.swing.*;
 
 import static java.awt.BorderLayout.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -71,6 +73,25 @@ public class FrameGUI extends JFrame {
         
         JMenu file = new JMenu("File");
         JMenu help = new JMenu("Help");
+        
+        help.addMenuListener(new MenuListener() {
+
+            @Override
+            public void menuSelected(MenuEvent e) {
+            JOptionPane.showMessageDialog(null, "ss");           
+            }
+
+            @Override
+            public void menuDeselected(MenuEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void menuCanceled(MenuEvent e) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+            
+        });
         
         
         
