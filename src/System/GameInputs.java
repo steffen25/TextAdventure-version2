@@ -19,13 +19,20 @@ import java.io.InputStreamReader;
 import javax.swing.*;
 import javax.swing.text.Element;
 import System.Commands;
+import Room.Room;
+import Room.Items;
+import Inventory.InventoryClass;
 
 public class GameInputs {
 
 
 
     private JTextArea textarea;
+    
+    private JList list;
 
+    private DefaultListModel model;
+    
 
     
     
@@ -71,6 +78,13 @@ public class GameInputs {
                 case Commands.USE:
                 textarea.append("\n" +Commands.USE.toString());
                 break;
+                case Commands.PICKUP:
+                if (input.equalsIgnoreCase("pickup"))
+                {
+                    updateInventory(new Items("apple",1,"test"));
+                    
+                }
+                break;
                 default:
                 textarea.append("\n" + "Command doesnt exist. Use help function in the menu");
                 break;
@@ -112,7 +126,6 @@ public class GameInputs {
 
      textarea.setLineWrap(true);
 
-
      textarea.setText("Once upon a timere there lived a big asss girl named Cindarella!");
 
      textarea.setEditable(false);
@@ -128,30 +141,31 @@ public class GameInputs {
     * */
 
     public JList createInventoryList() { // Dani WU
+        
 
+        
+        model = new DefaultListModel();
+        list = new JList(model);
+        list.setFixedCellHeight(20);
+        list.setFixedCellWidth(40);
+        list.setBackground(Color.WHITE);
 
-        String	listInventory[] = // Danni WU
-                {
-                        "Key",
-                        "Gun",
-                        "Kondom",
-                        "Stripper",
-                        "Mujjaffa",
-                        
-                };
-
-        JList inventoryList = new JList(listInventory); // Danni Wu
-
-        inventoryList.setBackground(Color.ORANGE);
-        inventoryList.setFixedCellHeight(20); // Danni WU
-        inventoryList.setFixedCellWidth(40); // Danni Wu
-
-
-
-
-
-     return inventoryList; // Danni WU
+        return list; // Danni WU
  }
+    
+    public void updateInventory(Items newItem)
+    {
+        
+        
+        final InventoryClass inv = new InventoryClass();
+        inv.addItems(newItem);
+        
+        model.addElement(newItem.getName());
+        //JOptionPane.showMessageDialog(null, inv.getItems());
+        
+        
+        
+    }
 
     //----------------------------------------------------------------------------------------
 
