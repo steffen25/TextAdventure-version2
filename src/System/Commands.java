@@ -21,6 +21,11 @@ public final class Commands {
     public static final String USE = "use";
     public static final String PICKUP = "pickup";
     public static final String ATTACK = "attack";
+    
+    public static final String NEWGAME = "newgame";
+    public static final String SAVE = "save";
+    public static final String LOAD = "load";
+    public static final String EXIT = "exit";
 
 
 

@@ -52,29 +52,31 @@ public class GameInputs {
         if (e.getKeyCode() == KeyEvent.VK_ENTER)
         {
            final  String input = textfield.getText();
+           
+           
           
             switch(input.toLowerCase()) {
                 case Commands.NORTH:
-                System.out.println(Commands.NORTH.toString());
+                textarea.append("\n" + Commands.NORTH.toString());
                 break;
                 case Commands.SOUTH:
-                System.out.println(Commands.SOUTH.toString());
+                textarea.append("\n" +Commands.SOUTH.toString());
                 break;
                 case Commands.EAST:
-                System.out.println(Commands.EAST.toString());
+                textarea.append("\n" +Commands.EAST.toString());
                 break;
                 case Commands.WEST:
-                System.out.println(Commands.WEST.toString());
+                textarea.append("\n" +Commands.WEST.toString());
                 break;
                 case Commands.USE:
-                System.out.println(Commands.USE.toString());
+                textarea.append("\n" +Commands.USE.toString());
                 break;
                 default:
-                System.out.println("Command doesnt exist.");
+                textarea.append("\n" + "Command doesnt exist. Use help function in the menu");
                 break;
             }
           
-          textarea.append(input + "\n");
+          //textarea.append(input + "\n");
           
             
           
