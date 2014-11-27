@@ -11,9 +11,17 @@ import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 import static java.awt.BorderLayout.*;
+import java.awt.event.ActionListener;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
+import System.GameInputs;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -27,7 +35,7 @@ import javax.swing.event.MenuListener;
 
 
 
-public class FrameGUI extends JFrame {
+public class FrameGUI extends JFrame implements ActionListener {
     //tet
     private GameInputs gameinputs = new GameInputs();
     //(String name, int HP, boolean isDead, int mindamage, int maxdamage)
@@ -36,7 +44,10 @@ public class FrameGUI extends JFrame {
     private final Enemy enemy1 = new Enemy("Monster","Sort monster",90,8,12,false);
     
     private JScrollPane jp;
+    
+    private JFileChooser jFileChooser = new JFileChooser();
 
+    private JLabel statusjl = new JLabel();
     
     public FrameGUI() {
                
@@ -150,9 +161,72 @@ public class FrameGUI extends JFrame {
         file.add(save);
         file.add(load);
         
+        getContentPane().add(statusjl, BorderLayout.SOUTH);
+        
+         load.addActionListener(this);
+         save.addActionListener(this);
         
         return menubar;
     }
+    
+    
+      public void actionPerformed(ActionEvent e){
+    String actionCommand = e.getActionCommand();
+ 
+    if (e.getSource() instanceof JMenuItem){
+      if ("load" .equals(actionCommand)){
+        load();
+      }
+      else if ("Save" .equals(actionCommand)){
+        save();
+      }
+
+    }
+  }
+ 
+  private void load(){
+    if (jFileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+      load(jFileChooser.getSelectedFile());
+    }
+  }
+ 
+  private void load(File file){
+    try{
+      BufferedInputStream in = new BufferedInputStream(new FileInputStream(file));
+      byte [] b = new byte[in.available()];
+      in.read(b, 0, b.length);
+      gameinputs.textarea.append(new String(b, 0, b.length));
+      in.close();
+ 
+      statusjl.setText(file.getName() + " opened");
+    }
+     
+    catch(IOException ex){
+      statusjl.setText("Error opening file " + file.getName());
+    }
+  }
+ 
+  private void save(){
+    if (jFileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION){
+      save(jFileChooser.getSelectedFile());
+    }
+  }
+ 
+  private void save(File file){
+    try{
+      BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file));
+      byte []  b = (gameinputs.textarea.getText()).getBytes();
+      out.write(b, 0, b.length);
+      out.close();
+ 
+      statusjl.setText(file.getName() + " saved ");
+    }
+ 
+    catch (IOException ex){
+      statusjl.setText("Error saving " + file.getName());
+    }
+  }
+    
     
     
     private JPanel leftPanel() {
