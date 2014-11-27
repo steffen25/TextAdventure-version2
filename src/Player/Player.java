@@ -6,6 +6,7 @@
 package Player;
 import System.GameEntities;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,6 +15,8 @@ import java.util.Random;
 
 //test
 //dasdas
+
+// sword increase maximum damage
 public class Player extends GameEntities {
     
     
@@ -22,7 +25,9 @@ public class Player extends GameEntities {
     
     public Player(String name, int HP, boolean isDead, int mindamage, int maxdamage)
     {
-        this.setName(name);
+        String name2;
+        name2 = JOptionPane.showInputDialog(null, "What's your name?");
+        this.setName(name2);
         this.setHP(HP);
         this.isDead = isDead;
         this.setDamage(randDamage(mindamage,maxdamage));
