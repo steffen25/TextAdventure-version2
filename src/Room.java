@@ -1,9 +1,11 @@
 
 import java.util.ArrayList;
+import javax.swing.JTextArea;
 
 public class Room {
 
-	private String id; // west, center, east, north1, north2
+        private JTextArea textarea;
+        private String id; // west, center, east, north1, north2
 	private boolean isDark; //is the room dark
 	private boolean isLocked; //is there a locked door in the room
 	private String description; //room description
@@ -24,10 +26,6 @@ public class Room {
             return this.isDark;
 	}
 
-	/**
-	 * 
-	 * @param isLight
-	 */
 	public void setIsDark(boolean isLight) { //can use method to light room if boolean is set to false
 		this.isDark = isDark;
 	}
@@ -44,13 +42,21 @@ public class Room {
 		this.isLocked = isLocked;
 	}
 
-	public void ifNoFlashlight() {
-            //enter room but return text for no light and do not return items ArrayList for the room
+	public void lightMethod() {//enter room but return text for no light and do not return items ArrayList for the room
+                if (isDark == true){
+                    textarea.append("bla bla, can't see shit" + "\n"); 
+                } else {
+                    textarea.append(//description for lighted room)
+                }
 
 	}
 
-	public void ifNoKey() {
-            //return text for no key and do not enter room
+	public void unlockMethod() {//return text for no key and do not enter room
+                if (isLocked == true){
+                    textarea.append("bla bla, can't open shit" + "\n");
+                } else {
+                    textarea.append(//description for room+unlocked door);
+                }
 	}
 
 	public String getDescription() { //return room description
