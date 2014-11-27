@@ -58,11 +58,16 @@ public class GameInputs {
         {
         if (e.getKeyCode() == KeyEvent.VK_ENTER)
         {
-           final  String input = textfield.getText();
+           final  String command = textfield.getText();
+           final String[] parts = command.split("\\s+");
+           final String command2 = parts[0];
+           final String action = parts[1];
+           
+           //JOptionPane.showMessageDialog(null, command2 + command3);
            
            
           
-            switch(input.toLowerCase()) {
+            switch(command2.toLowerCase()) {
                 case Commands.NORTH:
                 textarea.append("\n" + Commands.NORTH.toString());
                 break;
@@ -79,11 +84,29 @@ public class GameInputs {
                 textarea.append("\n" +Commands.USE.toString());
                 break;
                 case Commands.PICKUP:
-                if (input.equalsIgnoreCase("pickup"))
+                if (action.equals("apple"))
                 {
                     updateInventory(new Items("apple",1,"test"));
                     
                 }
+                else if (action.equals("key"))
+                {
+                    updateInventory(new Items("key",1,"key åbn dør"));
+                    
+                }
+                else {
+                    textarea.append("\n" + "Command doesnt exist. Use help function in the menu");
+                }
+                
+                break;
+                case Commands.EXIT:
+                System.exit(0);
+                break;
+                case Commands.SAVE:
+                //saveGame();
+                break;
+                case Commands.LOAD:
+                //loadGame();
                 break;
                 default:
                 textarea.append("\n" + "Command doesnt exist. Use help function in the menu");
